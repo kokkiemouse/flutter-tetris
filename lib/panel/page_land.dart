@@ -34,7 +34,7 @@ class PageLand extends StatelessWidget {
                     Row(
                       children: <Widget>[
                         Spacer(),
-                        RewardButton(),
+                        MaterialButton(onPressed: (){}),
                       ],
                     ),
                     Spacer(),

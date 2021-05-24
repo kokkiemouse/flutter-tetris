@@ -36,10 +36,10 @@ class SoundState extends State<Sound> {
   bool mute = false;
 
   void _play(String name) {
-    final soundId = _soundIds[name];
+    /*final soundId = _soundIds[name];
     if (soundId != null && !mute) {
       _pool.play(soundId);
-    }
+    }*/
   }
 
   @override
@@ -49,8 +49,8 @@ class SoundState extends State<Sound> {
     _soundIds = Map();
     for (var value in _SOUNDS) {
       scheduleMicrotask(() async {
-        final data = await rootBundle.load('assets/audios/$value');
-        _soundIds[value] = await _pool.load(data);
+        //final data = await rootBundle.load('assets/audios/$value');
+        //_soundIds[value] = await _pool.load(data);
       });
     }
   }
