@@ -2,6 +2,7 @@ import 'dart:async';
 import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:tetris/gamer/gamer.dart';
 import 'package:tetris/generated/i18n.dart';
 
@@ -102,12 +103,14 @@ class DirectionController extends StatelessWidget {
                       enableLongPress: false,
                       size: _DIRECTION_BUTTON_SIZE,
                       onTap: () {
+                        HapticFeedback.heavyImpact();
                         Game.of(context).rotate();
                       }),
                   SizedBox(width: _DIRECTION_SPACE),
                   _Button(
                       size: _DIRECTION_BUTTON_SIZE,
                       onTap: () {
+                        HapticFeedback.heavyImpact();
                         Game.of(context).right();
                       }),
                 ],
@@ -119,12 +122,14 @@ class DirectionController extends StatelessWidget {
                   _Button(
                       size: _DIRECTION_BUTTON_SIZE,
                       onTap: () {
+                        HapticFeedback.heavyImpact();
                         Game.of(context).left();
                       }),
                   SizedBox(width: _DIRECTION_SPACE),
                   _Button(
                     size: _DIRECTION_BUTTON_SIZE,
                     onTap: () {
+                      HapticFeedback.heavyImpact();
                       Game.of(context).down();
                     },
                   ),
@@ -154,6 +159,7 @@ class SystemButtonGroup extends StatelessWidget {
               color: _systemButtonColor,
               enableLongPress: false,
               onTap: () {
+                HapticFeedback.heavyImpact();
                 Game.of(context).soundSwitch();
               }),
         ),
@@ -164,6 +170,7 @@ class SystemButtonGroup extends StatelessWidget {
               color: _systemButtonColor,
               enableLongPress: false,
               onTap: () {
+                HapticFeedback.heavyImpact();
                 Game.of(context).pauseOrResume();
               }),
         ),
@@ -174,6 +181,7 @@ class SystemButtonGroup extends StatelessWidget {
               enableLongPress: false,
               color: Colors.red,
               onTap: () {
+                HapticFeedback.heavyImpact();
                 Game.of(context).reset();
               }),
         )
@@ -191,6 +199,7 @@ class DropButton extends StatelessWidget {
           enableLongPress: false,
           size: Size(90, 90),
           onTap: () {
+            HapticFeedback.heavyImpact();
             Game.of(context).drop();
           }),
     );
