@@ -2,7 +2,6 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:soundpool/soundpool.dart';
 
 class Sound extends StatefulWidget {
   final Widget child;
@@ -29,7 +28,7 @@ const _SOUNDS = [
 ];
 
 class SoundState extends State<Sound> {
-  Soundpool _pool;
+  //Soundpool _pool;
 
   Map<String, int> _soundIds;
 
@@ -45,7 +44,7 @@ class SoundState extends State<Sound> {
   @override
   void initState() {
     super.initState();
-    _pool = Soundpool(streamType: StreamType.music, maxStreams: 4);
+    //_pool = Soundpool(streamType: StreamType.music, maxStreams: 4);
     _soundIds = Map();
     for (var value in _SOUNDS) {
       scheduleMicrotask(() async {
@@ -58,7 +57,7 @@ class SoundState extends State<Sound> {
   @override
   void dispose() {
     super.dispose();
-    _pool.dispose();
+    //_pool.dispose();
   }
 
   @override
